@@ -13,6 +13,6 @@ import 'package:deutsche_lingo/main.dart';
 void main() {
   testWidgets('test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
-    await tester.pumpWidget(const DDApp());
+    await tester.pumpWidget(const LingoApp());
   });
 }
