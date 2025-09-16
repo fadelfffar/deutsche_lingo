@@ -22,7 +22,7 @@ class _LingoAppState extends State<LingoApp> {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: HomeScreen(),
+      home: QuizScreen(),
     );
   }
 }
