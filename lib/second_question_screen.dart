@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:rive/rive.dart';
 
@@ -26,6 +28,7 @@ class SecondQuestionScreen extends StatefulWidget {
 class _SecondQuestionScreenState extends State<SecondQuestionScreen> {
   int? selectedAnswerIndex;
   bool hasAnswered = false;
+  final fileLoader = File.fromUri("https://cdn.rive.app/animations/vehicles.riv" as Uri,);
 
   // Second question data
   final Question currentQuestion = Question(
@@ -115,7 +118,7 @@ class _SecondQuestionScreenState extends State<SecondQuestionScreen> {
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(13),
                 child: RiveAnimation.asset(
-                  'assets/untitled.riv',
+                  fileLoader as String,
                   fit: BoxFit.contain,
                   // Use a fallback if animation fails to load
                   onInit: (artboard) {
@@ -360,7 +363,7 @@ class _QuizScreenState extends State<QuizScreen> {
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(13),
                 child: RiveAnimation.asset(
-                  'assets/untitled.riv',
+                  fileLoader as String,
                   fit: BoxFit.contain,
                   // Optional: Add animation controls
                   onInit: (artboard) {
