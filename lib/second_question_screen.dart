@@ -28,7 +28,7 @@ class SecondQuestionScreen extends StatefulWidget {
 class _SecondQuestionScreenState extends State<SecondQuestionScreen> {
   int? selectedAnswerIndex;
   bool hasAnswered = false;
-  final fileLoader = File.fromUri("https://cdn.rive.app/animations/vehicles.riv" as Uri,);
+  final fileLoader = RiveFile.network("https://cdn.rive.app/animations/vehicles.riv",);
 
   // Second question data
   final Question currentQuestion = Question(
@@ -360,17 +360,17 @@ class _QuizScreenState extends State<QuizScreen> {
                   ),
                 ],
               ),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(13),
-                child: RiveAnimation.asset(
-                  fileLoader as String,
-                  fit: BoxFit.contain,
-                  // Optional: Add animation controls
-                  onInit: (artboard) {
-                    print('Rive animation initialized');
-                  },
-                ),
-              ),
+              // child: ClipRRect(
+              //   borderRadius: BorderRadius.circular(13),
+              //   child: RiveAnimation.asset(
+              //     file as String,
+              //     fit: BoxFit.contain,
+              //     // Optional: Add animation controls
+              //     onInit: (artboard) {
+              //       print('Rive animation initialized');
+              //     },
+              //   ),
+              // ),
             ),
 
             // Question Section
