@@ -1,3 +1,4 @@
+import 'package:deutsche_lingo/result_screen.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:deutsche_lingo/question_repository.dart';
@@ -56,7 +57,10 @@ class _ExamScreenState extends State<ExamScreen> {
     Navigator.pushReplacement(
       context,
       MaterialPageRoute(
-        builder: (context) => ExamScreen(studentName: 'Fad',
+        builder: (context) => ResultScreen(
+          studentName: widget.studentName,
+          score: score,
+          totalQuestions: questions.length,
         ),
       ),
     );
