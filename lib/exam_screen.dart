@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:deutsche_lingo/question_repository.dart';
 
+import 'audio_service.dart';
+
 class ExamScreen extends StatefulWidget {
   final String studentName;
 
@@ -28,7 +30,7 @@ class _ExamScreenState extends State<ExamScreen> {
   @override
   void initState() {
     super.initState();
-    questions = QuestionRepository().getGermanQuestions();
+    questions = QuestionRepository().getItalianQuestions();
   }
 
   @override
@@ -39,7 +41,7 @@ class _ExamScreenState extends State<ExamScreen> {
 
   void _handleFeedback() {
     if (showFeedback) {
-      _feedbackTimer = Timer(const Duration(seconds: 5), () {
+      _feedbackTimer = Timer(const Duration(seconds: 1), () {
         if (currentQuestionIndex < questions.length - 1) {
           setState(() {
             currentQuestionIndex++;
@@ -72,6 +74,8 @@ class _ExamScreenState extends State<ExamScreen> {
         isCorrect = selectedAnswer == currentQuestion.correctAnswerIndex;
         if (isCorrect) score++;
         showFeedback = true;
+        // Access current Question at question_repository.dart by index and access its audioPhrase
+        AudioService.play(questions[currentQuestionIndex].audioPhrase);
       });
       _handleFeedback();
     }
