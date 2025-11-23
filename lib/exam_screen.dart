@@ -41,7 +41,7 @@ class _ExamScreenState extends State<ExamScreen> {
 
   void _handleFeedback() {
     if (showFeedback) {
-      _feedbackTimer = Timer(const Duration(seconds: 1), () {
+      _feedbackTimer = Timer(const Duration(seconds: 4), () {
         if (currentQuestionIndex < questions.length - 1) {
           setState(() {
             currentQuestionIndex++;
