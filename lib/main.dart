@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:supabase_flutter/supabase_flutter.dart';
 
 import 'exam_screen.dart';
+import 'screens/landing_screen.dart';
+import 'screens/signup_screen.dart';
 
-void main() async {;
+void main() {
   WidgetsFlutterBinding.ensureInitialized();
   runApp(const LingoApp());
 }
+
 class LingoApp extends StatefulWidget {
   const LingoApp({super.key});
 
@@ -18,11 +20,22 @@ class _LingoAppState extends State<LingoApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Language Exam App',
+      title: 'For Fajr',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        useMaterial3: true,
+        brightness: Brightness.dark,
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: const Color(0xFF004D40),
+          brightness: Brightness.dark,
+        ),
+        scaffoldBackgroundColor: Colors.black,
       ),
-      home: ExamScreen(studentName: "Fad"),
+      home: const LandingScreen(),
+      routes: {
+        '/signup': (context) => const SignUpScreen(),
+        '/exam': (context) => const ExamScreen(studentName: 'Guest'),
+      },
     );
   }
 }
