@@ -3,7 +3,7 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 
 import 'exam_screen.dart';
 
-void main() async {;
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   runApp(const LingoApp());
 }
