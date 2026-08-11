@@ -1,5 +1,5 @@
 name: deutsche_lingo
-description: "A new Flutter project."
+description: "A Flutter quiz app for practicing everyday language skills abroad."
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
